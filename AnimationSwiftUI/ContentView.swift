@@ -8,9 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var shape = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        TabView {
+            HeartView(width: 280, height: 280)
+                .tabItem {
+                    Image(systemName: "suit.heart.fill")
+                    Text ("heart")
+                }
+            StarView(width: 200, height: 280)
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text ("star")
+                }
+            CustomCapsule()
+                .tabItem {
+                    Image(systemName: "capsule.portrait.fill")
+                    Text ("capsule")
+                }
+        }
+        
     }
 }
 
